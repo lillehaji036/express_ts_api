@@ -9,6 +9,7 @@ import {
 
 import { validate } from "../middleware/validation";
 import { createUserZodSchema } from "../models/user.model";
+import { restricTo } from "../middleware/auth.middleware";
 
 const router = express.Router();
 

@@ -4,6 +4,8 @@ export interface UserDocument {
   name: string;
   price: number;
   description: string;
+  stock: number;
+  category: string;
 }
 
 const productSchema = new mongoose.Schema<UserDocument>(
@@ -11,8 +13,10 @@ const productSchema = new mongoose.Schema<UserDocument>(
     name: { type: String, required: true },
     price: { type: Number, required: true, unique: true },
     description: { type: String, required: true },
+    stock: { type: Number, required: true },
+    category: { type: String, required: true },
   },
-  { timestamps: true }
+  { timestamps: true },
 );
 
 export const ProductDB = mongoose.model<UserDocument>("Product", productSchema);
